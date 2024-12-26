@@ -10,7 +10,7 @@ class TokenMetadataService {
     async initializeTokenList() {
         try {
             const tokens = await new TokenListProvider().resolve();
-            const tokenList = tokens.filterByClusterSlug(network).getList();
+            const tokenList = tokens.filterByClusterSlug('mainnet-beta').getList();
             
             tokenList.forEach(token => {
                 this.tokenList.set(token.address, {

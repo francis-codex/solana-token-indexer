@@ -59,7 +59,7 @@ const serverConfig = {
 
 // Database configuration
 const dbConfig = {
-    uri: process.env.MONGODB_URI,
+    uri: process.env.MONGODB_URI || 'mongodb+srv://franciscodex:<db_password>@cluster0.9pk3p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
     options: {
         useNewUrlParser: true,
         useUnifiedTopology: true,

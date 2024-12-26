@@ -1,10 +1,10 @@
 import express, { json } from 'express';
 import { connect } from 'mongoose';
 import config from './config/config.js';
-const { logger, mongodb, port } = config;
 import quickNodeService from './services/quicknode.js';
-quickNodeService.initializeStream();
 import { find, countDocuments } from './models/transfer.js';
+
+const { logger, mongodb, port } = config;
 
 // Initialize Express
 const app = express();
@@ -16,7 +16,7 @@ connect(mongodb.uri)
     .catch(err => logger.error('MongoDB connection error:', err));
 
 // Initialize QuickNode stream
-initializeStream()
+quickNodeService.initializeStream()
     .then(() => logger.info('QuickNode stream initialized'))
     .catch(err => logger.error('QuickNode stream error:', err));
 
