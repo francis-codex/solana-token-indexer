@@ -9,9 +9,10 @@ A Node.js service that indexes SPL token transfers on Solana and serves them ove
 
 ## Run
 
+Create a `.env` with your QuickNode endpoint and MongoDB connection string (see `src/config/config.js` for the exact names), then:
+
 ```bash
 npm install
-cp .env.example .env   # QuickNode endpoint, MongoDB URI
 npm run dev
 ```
 
